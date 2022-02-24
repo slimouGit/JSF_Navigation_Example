@@ -24,8 +24,7 @@ public class FruitBean extends AbstractBean  {
 	}
 	
 	public String redirect(){
-		Navigation navigation = new Navigation(NavigationUtil.HOME);
-		return navigation.redirect();
+		return new Navigation(NavigationUtil.HOME).redirect();
 	}
 
 	public String getWelcomeToBasket() {
