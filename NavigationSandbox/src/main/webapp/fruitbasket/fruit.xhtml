@@ -7,18 +7,19 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>NavigationSandbox</title>
+	<title>FruitBasket</title>
+	<f:metadata>
+      <f:viewParam name="fruit" value="#{fruitBean.fruit}" />
+    </f:metadata>
 </h:head>
 <h:body>
 	<f:view>
-		<p:outputLabel value="#{dashboardBean.greeting}" />
+		<p:outputLabel value="#{fruitBean.welcomeToBasket}" />	
+		<br/>
+		<p:outputLabel value="Your fruit: #{fruitBean.fruit}" rendered="#{not empty fruitBean.fruit}"/>	
 		
 		<h:form>
-			<p:commandButton value="redirectWithParams" action="#{dashboardBean.redirect('Apple')}"/>
-		</h:form>
-		<br/>
-		<h:form>
-			<p:commandButton value="redirectWithOutParams" action="#{dashboardBean.redirect}"/>
+			<p:commandButton value="home" action="#{fruitBean.redirect}"/>
 		</h:form>
 		
 	</f:view>
