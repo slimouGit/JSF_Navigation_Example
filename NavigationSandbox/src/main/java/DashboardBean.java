@@ -26,6 +26,10 @@ public class DashboardBean extends AbstractBean {
 	public String redirect(String fruit){
 		return new Navigation(NavigationUtil.FRUITBASKET).constructFluentParameters("fruit", fruit).redirect();
 	}
+	
+	public String redirect(String key, String value){
+		return new Navigation(NavigationUtil.FRUITBASKET).constructFluentParameters(key, value).redirect();
+	}
 
 	public String getGreeting() {
 		return greeting;
