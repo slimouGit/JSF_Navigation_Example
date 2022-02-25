@@ -44,5 +44,6 @@ public class FruitBean extends AbstractBean  {
 	}
 	
 	
+	
 
 }

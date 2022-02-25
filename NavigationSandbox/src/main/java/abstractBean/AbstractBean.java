@@ -11,5 +11,17 @@ public abstract class AbstractBean implements Serializable {
 	
 	protected HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
 	        .getRequest();
+	
+	private String customer = request.getParameter("customer");
+
+	public String getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(String customer) {
+		this.customer = customer;
+	}
+	
+	
 
 }

@@ -27,13 +27,9 @@ public class Navigation {
 					.collect(Collectors.joining("&")));
 		}
 		if (this.facesRedirect) {
-			target.append((this.parameters.isEmpty())?("?faces-redirect=true"):("&faces-redirect=true"));
+			target.append("?faces-redirect=true");
 		}
 		return target.toString();
-	}
-	
-	public void constructParameters(String key, String value) {
-		this.parameters.put(key, value);
 	}
 	
 	public Navigation constructFluentParameters(String key, String value) {

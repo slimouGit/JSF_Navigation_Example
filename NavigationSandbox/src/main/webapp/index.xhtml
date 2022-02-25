@@ -12,23 +12,25 @@
 <h:body>
 	<f:view>
 		<p:outputLabel value="#{dashboardBean.greeting}" />
-		
-		<h:form>
-			<p:commandButton value="redirectWithParams" action="#{dashboardBean.redirect('Apple')}"/>
-		</h:form>
-		<br/>
-		<h:form>
-			<p:commandButton value="redirectWithOutParams" action="#{dashboardBean.redirect}"/>
-		</h:form>
-		<br/>
-		<h:form>
-			<p:commandButton value="Banana" action="#{dashboardBean.redirect('fruit', 'Banana')}"/>
-		</h:form>
-		<br/>
-		<h:form>
-			<p:commandButton value="Plum" action="#{dashboardBean.redirectPlum}"/>
-		</h:form>
-		
+
+		<p:panel header="Fruit Basket">
+			<h:form>
+				<p:panelGrid columns="5" layout="grid"
+					styleClass="showcase-text-align-center">
+					<p:commandButton value="redirectWithParams"
+						action="#{dashboardBean.redirect('Apple')}" />
+					<p:commandButton value="redirectWithOutParams"
+						action="#{dashboardBean.redirect}" />
+					<p:commandButton value="Banana"
+						action="#{dashboardBean.redirect('fruit', 'Banana')}" />
+					<p:commandButton value="Plum"
+						action="#{dashboardBean.redirectPlum}" />
+					<p:commandButton value="MultiParams"
+						action="#{dashboardBean.redirectMultiParams}" />
+				</p:panelGrid>
+			</h:form>
+		</p:panel>
+
 	</f:view>
 </h:body>
 </html>
