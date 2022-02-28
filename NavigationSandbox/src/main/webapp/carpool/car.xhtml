@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>CarPool</title>
+	<f:metadata>
+      <f:viewParam name="car" value="#{carBean.car}" />
+      <f:viewParam name="customer" value="#{carBean.customer}" />
+    </f:metadata>
+</h:head>
+<h:body>
+	<f:view>
+		<p:outputLabel value="#{carBean.welcomeToCarPool}" />	
+		<br/>
+		<p:outputLabel value="Hello #{carBean.customer}" rendered="#{not empty carBean.customer}"/>	
+		
+		<br/>
+		<p:outputLabel value="Your car: #{carBean.car}" rendered="#{not empty carBean.car}"/>	
+		
+		<h:form>
+			<p:commandButton value="home" action="#{carBean.redirect}"/>
+		</h:form>
+		
+	</f:view>
+</h:body>
+</html>

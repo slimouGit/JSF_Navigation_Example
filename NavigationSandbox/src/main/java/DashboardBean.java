@@ -20,26 +20,45 @@ public class DashboardBean extends AbstractBean {
 	}
 	
 	public String redirect(){
-		return new Navigation(NavigationUtil.FRUITBASKET).redirect();
+		return new Navigation(NavigationUtil.FruitBasket.DASHBOARD_BASKET).redirect();
 	}
 	
 	public String redirect(String fruit){
-		return new Navigation(NavigationUtil.FRUITBASKET).constructFluentParameters("fruit", fruit).redirect();
+		return new Navigation(NavigationUtil.FruitBasket.DASHBOARD_BASKET).constructFluentParameters("fruit", fruit).redirect();
 	}
 	
 	public String redirect(String key, String value){
-		return new Navigation(NavigationUtil.FRUITBASKET).constructFluentParameters(key, value).redirect();
+		return new Navigation(NavigationUtil.FruitBasket.DASHBOARD_BASKET).constructFluentParameters(key, value).redirect();
 	}
 	
 	public String redirectPlum(){
-		return new Navigation(NavigationUtil.FRUITBASKET).constructFluentParameters("fruit", "Plum").redirect();
+		return new Navigation(NavigationUtil.FruitBasket.DASHBOARD_BASKET).constructFluentParameters("fruit", "Plum").redirect();
 	}
 	
 	public String redirectMultiParams(){
-		return new Navigation(NavigationUtil.FRUITBASKET)
+		return new Navigation(NavigationUtil.FruitBasket.DASHBOARD_BASKET)
 				.constructFluentParameters("fruit", "Plum")
 				.constructFluentParameters("customer", "Mimi")
 				.redirect();
+	}
+	
+	public String redirectToSpoiledFruits(String fruit){
+		return new Navigation(NavigationUtil.FruitBasket.SPOILEDFRUIT_BASKET).constructFluentParameters("fruit", fruit).redirect();
+	}
+
+	public String redirectToCarPool(String car){
+		return new Navigation(NavigationUtil.CarPool.DASHBOARD_CARPOOL).constructFluentParameters("car", car).redirect();
+	}
+	
+	public String redirectToCarPoolWithMultiParams(){
+		return new Navigation(NavigationUtil.CarPool.DASHBOARD_CARPOOL)
+				.constructFluentParameters("car", "Smart")
+				.constructFluentParameters("customer", "Salim")
+				.redirect();
+	}
+
+	public String redirectToSportsCarPool(String car){
+		return new Navigation(NavigationUtil.CarPool.SPORTSCAR_POOL).constructFluentParameters("car", car).redirect();
 	}
 
 	public String getGreeting() {

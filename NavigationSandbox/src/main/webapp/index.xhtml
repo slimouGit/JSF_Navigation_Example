@@ -31,6 +31,38 @@
 			</h:form>
 		</p:panel>
 
+		<p:panel header="Spoiled Fruit Basket">
+			<h:form>
+				<p:panelGrid columns="5" layout="grid"
+					styleClass="showcase-text-align-center">
+					<p:commandButton value="Spoiled Fruits"
+						action="#{dashboardBean.redirectToSpoiledFruits('Cherry')}" />
+				</p:panelGrid>
+			</h:form>
+		</p:panel>
+
+		<p:panel header="Car Pool">
+			<h:form>
+				<p:panelGrid columns="5" layout="grid"
+					styleClass="showcase-text-align-center">
+					<p:commandButton value="redirectWithParams"
+						action="#{dashboardBean.redirectToCarPool('Smart')}" />
+					<p:commandButton value="MultiParams"
+						action="#{dashboardBean.redirectToCarPoolWithMultiParams}" />
+				</p:panelGrid>
+			</h:form>
+		</p:panel>
+
+		<p:panel header="Sports Car Pool">
+			<h:form>
+				<p:panelGrid columns="5" layout="grid"
+					styleClass="showcase-text-align-center">
+					<p:commandButton value="redirectWithParams"
+						action="#{dashboardBean.redirectToSportsCarPool('Ferrari')}" />
+				</p:panelGrid>
+			</h:form>
+		</p:panel>
+
 	</f:view>
 </h:body>
 </html>

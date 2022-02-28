@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>CarPool</title>
+	<f:metadata>
+      <f:viewParam name="car" value="#{sportscarBean.car}" />
+      <f:viewParam name="customer" value="#{sportscarBean.customer}" />
+    </f:metadata>
+</h:head>
+<h:body>
+	<f:view>
+		<p:outputLabel value="#{sportscarBean.welcomeToCarPool}" />	
+		<br/>
+		<p:outputLabel value="Hello #{sportscarBean.customer}" rendered="#{not empty sportscarBean.customer}"/>	
+		
+		<br/>
+		<p:outputLabel value="Your sports car: #{sportscarBean.car}" rendered="#{not empty sportscarBean.car}"/>	
+		
+		<p:panel header="Car Pool Navigation">
+			<h:form>
+				<p:panelGrid columns="5" layout="grid"
+					styleClass="showcase-text-align-center">
+					<p:commandButton value="home" action="#{sportscarBean.redirect}"/>
+					
+					<p:commandButton value="redirectToCarPool"
+						action="#{sportscarBean.redirectToCarPool}" />
+				</p:panelGrid>
+			</h:form>
+		</p:panel>
+		
+	</f:view>
+</h:body>
+</html>

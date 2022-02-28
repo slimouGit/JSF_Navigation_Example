@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>SpoiledFruitBasket</title>
+	<f:metadata>
+      <f:viewParam name="fruit" value="#{spoiledfruitBean.fruit}" />
+      <f:viewParam name="customer" value="#{spoiledfruitBean.customer}" />
+    </f:metadata>
+</h:head>
+<h:body>
+	<f:view>
+		<p:outputLabel value="#{spoiledfruitBean.welcomeToBasket}" />	
+		<br/>
+		<p:outputLabel value="Hello #{spoiledfruitBean.customer}" rendered="#{not empty spoiledfruitBean.customer}"/>	
+		
+		<br/>
+		<p:outputLabel value="Your spoiled fruit: #{spoiledfruitBean.fruit}" rendered="#{not empty spoiledfruitBean.fruit}"/>	
+		
+		<h:form>
+			<p:commandButton value="home" action="#{spoiledfruitBean.redirect}"/>
+		</h:form>
+		
+	</f:view>
+</h:body>
+</html>

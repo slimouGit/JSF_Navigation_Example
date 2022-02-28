@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import navigation.NavigationUtil.UrlTargetModule;
+
 public class Navigation {
 
 	private String target;
@@ -18,6 +20,10 @@ public class Navigation {
 	public Navigation(String target, boolean facesRedirect) {
 		this.target = target;
 		this.facesRedirect = facesRedirect;
+	}
+
+	public Navigation(UrlTargetModule target) {
+		this.target = target.getFullPath();
 	}
 
 	public String redirect() {
